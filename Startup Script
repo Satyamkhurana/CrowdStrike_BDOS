@@ -1,0 +1,10 @@
+@echo off
+setlocal enabledelayedexpansion
+
+cd /d C:\Windows\System32\drivers\Crowdstrike
+
+for %%f in (C-00000291*.sys) do (
+    if exist "%%f" (
+        ren "%%f" "%%~nf.rename"
+        echo Renamed %%f to %%~nf.rename))
+endlocal
